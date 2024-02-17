@@ -84,16 +84,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.2.9",
+            "version": "2.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "07eccf080ad63d55d95a7c9133506db7d9029264"
+                "reference": "18f748df692b6304b5baf077786c003c48e7f990"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/07eccf080ad63d55d95a7c9133506db7d9029264",
-                "reference": "07eccf080ad63d55d95a7c9133506db7d9029264",
+                "url": "https://api.github.com/repos/composer/composer/zipball/18f748df692b6304b5baf077786c003c48e7f990",
+                "reference": "18f748df692b6304b5baf077786c003c48e7f990",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.9"
+                "source": "https://github.com/composer/composer/tree/2.2.10"
             },
             "funding": [
                 {
@@ -179,7 +179,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-15T21:13:37+00:00"
+            "time": "2022-03-29T19:55:36+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -2081,16 +2081,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.3.8",
+            "version": "v3.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "972d8604a92b7054828b539f2febb0211dd5945c"
+                "reference": "6ff9b0e440fa66f97f207e181c41340ddfa5683d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/972d8604a92b7054828b539f2febb0211dd5945c",
-                "reference": "972d8604a92b7054828b539f2febb0211dd5945c",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6ff9b0e440fa66f97f207e181c41340ddfa5683d",
+                "reference": "6ff9b0e440fa66f97f207e181c41340ddfa5683d",
                 "shasum": ""
             },
             "require": {
@@ -2141,7 +2141,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.8"
+                "source": "https://github.com/twigphp/Twig/tree/v3.3.9"
             },
             "funding": [
                 {
@@ -2153,7 +2153,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-04T06:59:48+00:00"
+            "time": "2022-03-25T09:37:52+00:00"
         }
     ],
     "packages-dev": [
@@ -2616,16 +2616,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706"
+                "reference": "77a32518733312af16a44300404e945338981de3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/93ebd0014cab80c4ea9f5e297ea48672f1b87706",
-                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/77a32518733312af16a44300404e945338981de3",
+                "reference": "77a32518733312af16a44300404e945338981de3",
                 "shasum": ""
             },
             "require": {
@@ -2660,9 +2660,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.6.0"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.6.1"
             },
-            "time": "2022-01-04T19:58:01+00:00"
+            "time": "2022-03-15T21:29:03+00:00"
         },
         {
             "name": "phpspec/prophecy",

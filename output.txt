@@ -1,0 +1,179 @@
+Scanning packages
+The alquemie/gravitformsuserregistration * requirement did not match any package
+Creating local downloads in '/Users/chriscarrel/GitHub/alquemie.github.io/dist'
+Dumping package 'alquemie/gravityformssignature' in version '4.3'.
+Dumping package 'roots/soil' in version '4.0.5'.
+Dumping package 'alquemie/cdp-analytics-gf' in version '1.0.0'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.8.12'.
+Skipping 'alquemie/repeater2-for-gravity-forms dev-master' (is dev)
+Dumping package 'alquemie/gravityforms' in version '2.5.5.3'.
+Dumping package 'roots/soil' in version '4.0.1'.
+Dumping package 'roots/soil' in version '3.8.0'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.3.1'.
+Dumping package 'roots/bedrock-autoloader' in version '1.0.2'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.12.2'.
+Skipping 'alquemie/gf-campaign-fields dev-master' (is dev)
+Skipping 'alquemie/advanced-custom-fields-pro dev-master' (is dev)
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '6.0.2'.
+Skipping 'alquemie/gf-velocify dev-main' (is dev)
+Dumping package 'roots/bedrock-autoloader' in version '1.0.0'.
+Dumping package 'alquemie/gravityforms' in version '2.6.1'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.3'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.12.3'.
+Dumping package 'alquemie/cdp-analytics' in version 'v1.0.4'.
+Dumping package 'alquemie/gf-formname' in version '0.1.1'.
+Dumping package 'alquemie/cdp-analytics' in version '1.5.0'.
+Dumping package 'roots/soil' in version '3.4.0'.
+Skipping 'roots/bedrock-autoloader dev-unit-tests' (is dev)
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.6'.
+Dumping package 'alquemie/gravityforms' in version '2.4.19'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.1'.
+Dumping package 'alquemie/gravityforms' in version '2.4.18'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.2'.
+Dumping package 'roots/soil' in version '4.0.0'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.10'.
+Skipping 'alquemie/gravityformsstripe dev-master' (is dev)
+Dumping package 'alquemie/gravityforms' in version '2.5.9.3'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.0'.
+Dumping package 'cedaro/gravity-forms-iframe' in version 'v2.0.2'.
+Dumping package 'alquemie/gravityforms' in version '2.6.1.3'.
+Dumping package 'roots/soil' in version '3.8.1'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.1.1'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.4'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.5'.
+Dumping package 'roots/soil' in version '3.7.0'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.2'.
+Dumping package 'alquemie/cdp-analytics' in version '1.3.0'.
+Dumping package 'alquemie/gravityforms' in version '2.7.0.3'.
+Dumping package 'alquemie/gravityforms' in version '2.4.21.6'.
+Dumping package 'alquemie/cdp-analytics' in version 'v1.0.2'.
+Dumping package 'alquemie/gf-campaign-fields' in version '1.1.6'.
+Dumping package 'alquemie/gravityforms' in version '2.4.21.1'.
+Dumping package 'alquemie/gravityforms' in version '2.4.20.5'.
+Dumping package 'alquemie/gravityformsmailchimp' in version '4.8'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.4.0'.
+Dumping package 'alquemie/gravityforms' in version '2.4.23'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.11'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.3'.
+Skipping 'roots/soil dev-main' (is dev)
+Dumping package 'roots/soil' in version '3.0.1'.
+Dumping package 'alquemie/gravityformssignature' in version '4.0.1'.
+Skipping 'alquemie/gf-formname dev-master' (is dev)
+Dumping package 'roots/soil' in version '3.0.2'.
+Dumping package 'roots/soil' in version '3.0.3'.
+Dumping package 'roots/soil' in version '3.9.0'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.3.2'.
+Dumping package 'alquemie/gravityforms' in version '2.6.6'.
+Dumping package 'roots/soil' in version '3.7.1'.
+Dumping package 'roots/soil' in version '3.2.0'.
+Dumping package 'roots/soil' in version '3.6.0'.
+Skipping 'cedaro/gravity-forms-iframe dev-develop' (is dev)
+Dumping package 'roots/soil' in version '3.7.3'.
+Dumping package 'cedaro/gravity-forms-iframe' in version 'v2.0.0'.
+Dumping package 'roots/soil' in version '4.1.1'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.1'.
+Dumping package 'roots/soil' in version '4.0.2'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.1'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.10.1'.
+Dumping package 'roots/soil' in version '3.1.0'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.8.13'.
+Dumping package 'alquemie/alquemie-config' in version '0.1.6'.
+Dumping package 'roots/soil' in version '4.0.3'.
+Dumping package 'alquemie/cdp-analytics-gf' in version '1.0.4'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.12.1'.
+Dumping package 'alquemie/gravityforms' in version '2.4.24'.
+Dumping package 'alquemie/alquemie-config' in version '0.2.2'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.3'.
+Dumping package 'roots/soil' in version '3.7.2'.
+Skipping 'alquemie/alquemie-config dev-master' (is dev)
+Dumping package 'alquemie/gravityformssignature' in version '4.2'.
+Dumping package 'alquemie/gravityforms' in version '2.6.3'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.8.11'.
+Dumping package 'alquemie/gravityforms' in version '2.4.22.1'.
+Dumping package 'alquemie/gravityformssignature' in version '4.0.3'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.5'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.2'.
+Dumping package 'alquemie/cdp-analytics-gf' in version '1.0.1'.
+Dumping package 'roots/bedrock-autoloader' in version '1.0.3'.
+Dumping package 'roots/soil' in version '3.6.2'.
+Dumping package 'alquemie/gravityforms' in version '2.6.7'.
+Dumping package 'roots/soil' in version '3.6.1'.
+Dumping package 'roots/soil' in version '4.1.0'.
+Skipping 'alquemie/gravityformsmailchimp dev-master' (is dev)
+Dumping package 'alquemie/cdp-analytics' in version 'v1.0.3'.
+Dumping package 'alquemie/gravityformssignature' in version '4.4'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '6.0.6'.
+Dumping package 'roots/soil' in version '4.0.4'.
+Dumping package 'alquemie/gf-formname' in version '0.2.0'.
+Dumping package 'cedaro/gravity-forms-iframe' in version 'v2.0.1'.
+Skipping 'alquemie/cdp-analytics v2.x-dev' (is dev)
+Dumping package 'alquemie/gf-velocify' in version '5.2.8'.
+Dumping package 'alquemie/gravityforms' in version '2.4.20.1'.
+Dumping package 'alquemie/gravityformsstripe' in version '4.1'.
+Dumping package 'alquemie/gf-campaign-fields' in version '1.0'.
+Skipping 'alquemie/gf-campaign-fields dev-dependabot/npm_and_yarn/json5-2.2.3' (is dev)
+Dumping package 'alquemie/gf-velocify' in version '5.1.4'.
+Skipping 'alquemie/gravityformssignature dev-master' (is dev)
+Dumping package 'roots/bedrock-autoloader' in version '1.0.1'.
+Skipping 'alquemie/cdp-analytics-gf dev-main' (is dev)
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '6.0.7'.
+Dumping package 'alquemie/cdp-analytics' in version '1.5.3'.
+Dumping package 'alquemie/gf-campaign-fields' in version '3.0.2'.
+Dumping package 'alquemie/gravityforms' in version '2.6.8.1'.
+Skipping 'roots/bedrock-autoloader dev-master' (is dev)
+Dumping package 'alquemie/alquemie-config' in version '0.1.7'.
+Dumping package 'alquemie/alquemie-config' in version '0.2.0'.
+Dumping package 'alquemie/repeater2-for-gravity-forms' in version '2.0.3'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.4'.
+Dumping package 'alquemie/gf-campaign-fields' in version '3.0.1'.
+Dumping package 'alquemie/cdp-analytics' in version '1.5.1'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.5.0'.
+Dumping package 'roots/soil' in version '3.3.0'.
+Dumping package 'roots/bedrock-autoloader' in version '1.0.4'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.0'.
+Skipping 'alquemie/gravityforms dev-master' (is dev)
+Dumping package 'roots/soil' in version '3.5.0'.
+Dumping package 'alquemie/gravityforms' in version '2.5.6'.
+Dumping package 'alquemie/gf-campaign-fields' in version '3.0.0'.
+Dumping package 'alquemie/gravityformsstripe' in version '4.3'.
+Skipping 'alquemie/gf-campaign-fields dev-dependabot/npm_and_yarn/http-cache-semantics-4.1.1' (is dev)
+Dumping package 'alquemie/gravityforms' in version '2.6.4.2'.
+Dumping package 'alquemie/gf-campaign-fields' in version '2.2.1'.
+Dumping package 'alquemie/advanced-custom-fields-pro' in version '5.9.9'.
+Dumping package 'alquemie/gravityforms' in version '2.4.20'.
+Skipping 'alquemie/cdp-analytics dev-main' (is dev)
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/advanced-custom-fields-pro.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/advanced-custom-fields-pro~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/alquemie-config.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/alquemie-config~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/cdp-analytics.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/cdp-analytics~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/cdp-analytics-gf.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/cdp-analytics-gf~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-campaign-fields.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-campaign-fields~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-formname.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-formname~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-velocify.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gf-velocify~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityforms.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityforms~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformsmailchimp.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformsmailchimp~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformssignature.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformssignature~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformsstripe.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/gravityformsstripe~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/repeater2-for-gravity-forms.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/alquemie/repeater2-for-gravity-forms~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/cedaro/gravity-forms-iframe.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/cedaro/gravity-forms-iframe~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/roots/bedrock-autoloader.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/roots/bedrock-autoloader~dev.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/roots/soil.json
+Wrote packages to /Users/chriscarrel/GitHub/alquemie.github.io/p2/roots/soil~dev.json
+Writing packages.json
+Pruning include directories
+Writing web view
+[master 512a609] Repo Updated 12/02/2023 16:19:38
+ 1 file changed, 2 insertions(+), 2 deletions(-)

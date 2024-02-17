@@ -1,0 +1,166 @@
+{
+  "name": "alquemie/packagist",
+  "homepage": "https://alquemie.github.io",
+  "description": "Private Repository used by Alquemie Marketing.",
+  "repositories": [
+    { "type": "vcs", "url": "git@github.com:alquemie/alquemie-config/" },
+    { "type": "vcs", "url": "git@github.com:alquemie/repeater2-for-gravity-forms/" },
+    { "type": "vcs", "url": "git@github.com:roots/soil/" },
+    { "type": "vcs", "url": "git@github.com:roots/bedrock-autoloader/" },
+    { "type": "vcs", "url": "git@github.com:cedaro/gravity-forms-iframe/" },
+    { "type": "vcs", "url": "git@github.com:Alquemie/cdp-analytics/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      }  
+    },
+    { "type": "vcs", "url": "git@github.com:Alquemie/cdp-analytics-gf/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      }  
+    },
+    { "type": "vcs", "url": "git@github.com:alquemie/advanced-custom-fields-pro/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+     },
+     { "type": "vcs", "url": "git@github.com:alquemie/gf-campaign-fields/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+    },
+     { "type": "vcs", "url": "git@github.com:alquemie/gf-formname/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+    },
+    { "type": "vcs", "url": "git@github.com:alquemie/gf-velocify/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+    },
+    { "type": "vcs", "url": "git@github.com:alquemie/gravityforms/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+     },
+     { "type": "vcs", "url": "git@github.com:alquemie/gravityformssignature/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+     },
+     { "type": "vcs", "url": "git@github.com:alquemie/gravityformsstripe/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      } 
+     },
+     { "type": "vcs", "url": "git@github.com:Alquemie/gravityformsuserregistration/",
+      "options":  {
+        "ssh2": {
+          "username": "git",
+          "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+          "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+        }
+      }
+     },
+     { "type": "vcs", "url": "git@github.com:alquemie/gravityformsmailchimp/",
+       "options":  {
+         "ssh2": {
+           "username": "git",
+           "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+           "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+         }
+       } 
+      },
+      { "type": "vcs", "url": "git@github.com:alquemie/gravityformsauthorizenet/",
+        "options":  {
+          "ssh2": {
+            "username": "git",
+            "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+            "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+          }
+        } 
+       },
+       { "type": "vcs", "url": "git@github.com:alquemie/gravitysmtp/",
+         "options":  {
+           "ssh2": {
+             "username": "git",
+             "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+             "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+           }
+         } 
+        },
+        { "type": "vcs", "url": "git@github.com:alquemie/gravityformsgoogleanalytics/",
+          "options":  {
+            "ssh2": {
+              "username": "git",
+              "pubkey_file": "/Users/chriscarrel/.ssh/id_purdue.pub",
+              "privkey_file": "/Users/chriscarrel/.ssh/id_purdue"
+            }
+          } 
+         }
+  ],
+  "require-all": false,
+  "require": {
+    "alquemie/alquemie-config": ">0.1",
+    "alquemie/repeater2-for-gravity-forms": ">=2.0.3",
+    "alquemie/advanced-custom-fields-pro": ">5.8",
+    "alquemie/cdp-analytics": "*",
+    "alquemie/cdp-analytics-gf": "*",
+    "alquemie/gf-campaign-fields": "*",
+    "alquemie/gf-formname": "*",
+    "alquemie/gf-velocify": "*",
+    "alquemie/gravityforms": ">2.4",
+    "alquemie/gravityformsmailchimp": ">=4.8",
+    "alquemie/gravityformssignature": ">4.0",
+    "alquemie/gravityformsstripe": ">4.0",
+    "alquemie/gravityformsuserregistration": "*",
+    "alquemie/gravityformsgoogleanalytics": "*",
+    "alquemie/gravitysmtp": "*",
+    "alquemie/gravityformsauthorizenet": "*",
+    "cedaro/gravity-forms-iframe": ">1.0.3",
+    "roots/bedrock-autoloader": "*",
+    "roots/soil": ">3.0"
+  },
+  "archive": {
+    "directory": "dist",
+    "format": "tar",
+    "skip-dev": true
+  },
+  "output-dir": "/Users/chriscarrel/GitHub/alquemie.github.io"
+}

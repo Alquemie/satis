@@ -1,4 +1,4 @@
-/build/
+./build/
 /cache/
 /node_modules/
 /tools/*/vendor/
@@ -6,3 +6,4 @@
 /.php-cs-fixer.cache
 /.phpunit.result.cache
 /resultCache.php
+.DS_Store
