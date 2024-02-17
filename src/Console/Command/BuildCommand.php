@@ -16,13 +16,18 @@ namespace Composer\Satis\Console\Command;
 use Composer\Command\BaseCommand;
 use Composer\Config;
 use Composer\Config\JsonConfigSource;
+use Composer\Console\Application as ComposerApplication;
 use Composer\Json\JsonFile;
 use Composer\Json\JsonValidationException;
+use Composer\Package\Loader\RootPackageLoader;
+use Composer\Package\Version\VersionGuesser;
+use Composer\Package\Version\VersionParser;
 use Composer\Satis\Builder\ArchiveBuilder;
 use Composer\Satis\Builder\PackagesBuilder;
 use Composer\Satis\Builder\WebBuilder;
-use Composer\Satis\Console\Application;
+use Composer\Satis\Console\Application as SatisApplication;
 use Composer\Satis\PackageSelection\PackageSelection;
+use Composer\Util\ProcessExecutor;
 use Composer\Util\RemoteFilesystem;
 use JsonSchema\Validator;
 use Seld\JsonLint\JsonParser;
@@ -36,8 +41,8 @@ class BuildCommand extends BaseCommand
 {
     protected function configure(): void
     {
+        $this->getName() ?? $this->setName('build');
         $this
-            ->setName('build')
             ->setDescription('Builds a composer repository out of a json file')
             ->setDefinition([
                 new InputArgument('file', InputArgument::OPTIONAL, 'Json file to use', './satis.json'),
@@ -91,10 +96,11 @@ class BuildCommand extends BaseCommand
                   of the repository (where you will host it). Build command allows this to be overloaded in SATIS_HOMEPAGE environment variable.
                 - <info>"twig-template"</info>: Location of twig template to use for
                   building the html output.
+                - <info>"allow-seo-indexing"</info>: Allow the generated html output to be indexed by search engines.
                 - <info>"abandoned"</info>: Packages that are abandoned. As the key use the
                   package name, as the value use true or the replacement package.
                 - <info>"blacklist"</info>: Packages and versions which should be excluded from the final package list.
-                - <info>"only-best-candidates"</info>: Returns a minimal set of dependencies needed to satisfy the configuration. 
+                - <info>"only-best-candidates"</info>: Returns a minimal set of dependencies needed to satisfy the configuration.
                   The resulting satis repository will contain only one or two versions of each project.
                 - <info>"notify-batch"</info>: Allows you to specify a URL that will
                   be called every time a user installs a package, see
@@ -122,11 +128,17 @@ class BuildCommand extends BaseCommand
         // load auth.json authentication information and pass it to the io interface
         $io = $this->getIO();
         $io->loadConfiguration($this->getConfiguration());
+        $config = [];
 
-        if (preg_match('{^https?://}i', $configFile)) {
+        if (1 === preg_match('{^https?://}i', $configFile)) {
             $rfs = new RemoteFilesystem($io, $this->getConfiguration());
-            $contents = $rfs->getContents(parse_url($configFile, PHP_URL_HOST), $configFile, false);
-            $config = JsonFile::parseJson($contents, $configFile);
+            $host = parse_url($configFile, PHP_URL_HOST);
+            if (is_string($host)) {
+                $contents = $rfs->getContents($host, $configFile, false);
+                if (is_string($contents)) {
+                    $config = JsonFile::parseJson($contents, $configFile);
+                }
+            }
         } else {
             $file = new JsonFile($configFile);
             if (!$file->exists()) {
@@ -166,7 +178,8 @@ class BuildCommand extends BaseCommand
         // disable packagist by default
         unset(Config::$defaultRepositories['packagist'], Config::$defaultRepositories['packagist.org']);
 
-        if (!$outputDir = $input->getArgument('output-dir')) {
+        $outputDir = $input->getArgument('output-dir');
+        if (!(bool) $outputDir) {
             $outputDir = $config['output-dir'] ?? null;
         }
 
@@ -174,14 +187,48 @@ class BuildCommand extends BaseCommand
             throw new \InvalidArgumentException('The output dir must be specified as second argument or be configured inside ' . $input->getArgument('file'));
         }
 
-        if ($homepage = getenv('SATIS_HOMEPAGE')) {
+        $homepage = getenv('SATIS_HOMEPAGE');
+        if (false !== $homepage) {
             $config['homepage'] = $homepage;
             $output->writeln(sprintf('<notice>Homepage config used from env SATIS_HOMEPAGE: %s</notice>', $homepage));
         }
 
-        /** @var Application $application */
+        /** @var SatisApplication|ComposerApplication $application */
         $application = $this->getApplication();
-        $composer = $application->getComposer(true, $config);
+        if ($application instanceof SatisApplication) {
+            $composer = $application->getComposerWithConfig($config);
+        } else {
+            $composer = $application->getComposer(true);
+        }
+
+        if (is_null($composer)) {
+            throw new \Exception('Unable to get Composer instance');
+        }
+
+        $composerConfig = $composer->getConfig();
+        if (!$application instanceof SatisApplication) {
+            $composerConfig->merge($config);
+            $composer->setConfig($composerConfig);
+        }
+
+        // Feed repo manager with satis' repos
+        $manager = $composer->getRepositoryManager();
+        foreach ($config['repositories'] as $repo) {
+            $manager->addRepository($manager->createRepository($repo['type'], $repo, $repo['name'] ?? null));
+        }
+        // Make satis' config file pretend it is the root package
+        $parser = new VersionParser();
+        /**
+         * In standalone case, the RootPackageLoader assembles an internal VersionGuesser with a broken ProcessExecutor
+         * Workaround by explicitly injecting a ProcessExecutor with enableAsync;
+         */
+        $process = new ProcessExecutor($io);
+        $process->enableAsync();
+        $guesser = new VersionGuesser($composerConfig, $process, $parser);
+        $loader = new RootPackageLoader($manager, $composerConfig, $parser, $guesser);
+        $satisConfigAsRootPackage = $loader->load($config);
+        $composer->setPackage($satisConfigAsRootPackage);
+
         $packageSelection = new PackageSelection($output, $outputDir, $config, $skipErrors);
 
         if (null !== $repositoryUrl && [] !== $repositoryUrl) {
@@ -212,8 +259,9 @@ class BuildCommand extends BaseCommand
         $packagesBuilder = new PackagesBuilder($output, $outputDir, $config, $skipErrors, $minify);
         $packagesBuilder->dump($packages);
 
-        if ($htmlView = !$input->getOption('no-html-output')) {
-            $htmlView = !isset($config['output-html']) || $config['output-html'];
+        $htmlView = (bool) $input->getOption('no-html-output');
+        if (!$htmlView) {
+            $htmlView = !isset($config['output-html']) || (bool) $config['output-html'];
         }
 
         if ($htmlView) {
@@ -245,17 +293,19 @@ class BuildCommand extends BaseCommand
     private function getComposerHome(): string
     {
         $home = getenv('COMPOSER_HOME');
-        if (!$home) {
+        if (false === $home) {
             if (defined('PHP_WINDOWS_VERSION_MAJOR')) {
-                if (!getenv('APPDATA')) {
+                $appData = getenv('APPDATA');
+                if (false === $appData) {
                     throw new \RuntimeException('The APPDATA or COMPOSER_HOME environment variable must be set for composer to run correctly');
                 }
-                $home = strtr(getenv('APPDATA'), '\\', '/') . '/Composer';
+                $home = strtr($appData, '\\', '/') . '/Composer';
             } else {
-                if (!getenv('HOME')) {
+                $homeEnv = getenv('HOME');
+                if (false === $homeEnv) {
                     throw new \RuntimeException('The HOME or COMPOSER_HOME environment variable must be set for composer to run correctly');
                 }
-                $home = rtrim(getenv('HOME'), '/') . '/.composer';
+                $home = rtrim($homeEnv, '/') . '/.composer';
             }
         }
 
@@ -263,24 +313,29 @@ class BuildCommand extends BaseCommand
     }
 
     /**
-     * @throws ParsingException        if the json file has an invalid syntax
-     * @throws JsonValidationException if the json file doesn't match the schema
+     * @throws ParsingException         if the json file has an invalid syntax
+     * @throws JsonValidationException  if the json file doesn't match the schema
+     * @throws \UnexpectedValueException if the json file is not UTF-8
      */
     private function check(string $configFile): bool
     {
         $content = file_get_contents($configFile);
 
         $parser = new JsonParser();
-        $result = $parser->lint($content);
+        $result = is_string($content) ? $parser->lint($content) : new ParsingException('Could not read file contents from "' . $configFile . '"');
         if (null === $result) {
             if (defined('JSON_ERROR_UTF8') && JSON_ERROR_UTF8 === json_last_error()) {
                 throw new \UnexpectedValueException('"' . $configFile . '" is not UTF-8, could not parse as JSON');
             }
 
-            $data = json_decode($content);
+            $data = json_decode((string) $content);
 
             $schemaFile = __DIR__ . '/../../../res/satis-schema.json';
-            $schema = json_decode(file_get_contents($schemaFile));
+            $schemaFileContents = file_get_contents($schemaFile);
+            if (false === $schemaFileContents) {
+                throw new ParsingException('Could not read file contents from "' . $schemaFile . '"');
+            }
+            $schema = json_decode($schemaFileContents);
             $validator = new Validator();
             $validator->check($data, $schema);
 

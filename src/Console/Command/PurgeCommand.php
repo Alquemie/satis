@@ -26,7 +26,8 @@ class PurgeCommand extends BaseCommand
 {
     protected function configure(): void
     {
-        $this->setName('purge')
+        $this->getName() ?? $this->setName('purge');
+        $this
             ->setDescription('Purge packages')
             ->setDefinition([
                 new InputArgument('file', InputArgument::OPTIONAL, 'Json file to use', './satis.json'),
@@ -78,19 +79,20 @@ class PurgeCommand extends BaseCommand
         $packageSelection = new PackageSelection($output, $outputDir, $config, false);
         $packages = $packageSelection->load();
 
+        $satis_homepage = getenv('SATIS_HOMEPAGE');
         $prefix = sprintf(
             '%s/%s/',
-            $config['archive']['prefix-url'] ?? getenv('SATIS_HOMEPAGE') ?: $config['homepage'],
+            $config['archive']['prefix-url'] ?? (false !== $satis_homepage ? $satis_homepage : $config['homepage']),
             $config['archive']['directory']
         );
 
         $length = strlen($prefix);
         $needed = [];
         foreach ($packages as $package) {
-            if (!$package->getDistType()) {
+            if (is_null($package->getDistType())) {
                 continue;
             }
-            $url = $package->getDistUrl();
+            $url = (string) $package->getDistUrl();
             if (substr($url, 0, $length) === $prefix) {
                 $needed[] = substr($url, $length);
             }
@@ -104,7 +106,7 @@ class PurgeCommand extends BaseCommand
             ->in($distDirectory)
         ;
 
-        if (!$finder->count()) {
+        if (0 === $finder->count()) {
             $output->writeln('<warning>No archives found.</warning>');
 
             return 0;
@@ -112,27 +114,27 @@ class PurgeCommand extends BaseCommand
 
         /** @var SplFileInfo[] $unreferenced */
         $unreferenced = [];
-        foreach ($finder as $file) {
-            $filename = strtr($file->getRelativePathname(), DIRECTORY_SEPARATOR, '/');
-            if (!in_array($filename, $needed)) {
-                $unreferenced[] = $file;
+        foreach ($finder as $currentFile) {
+            $filename = strtr($currentFile->getRelativePathname(), DIRECTORY_SEPARATOR, '/');
+            if (!in_array($filename, $needed, true)) {
+                $unreferenced[] = $currentFile;
             }
         }
 
-        if (empty($unreferenced)) {
+        if (0 === count($unreferenced)) {
             $output->writeln('<warning>No unreferenced archives found.</warning>');
 
             return 0;
         }
 
-        foreach ($unreferenced as $file) {
+        foreach ($unreferenced as $currentFile) {
             if (!$dryRun) {
-                unlink($file->getPathname());
+                unlink($currentFile->getPathname());
             }
 
             $output->writeln(sprintf(
                 '<info>Removed archive</info>: <comment>%s</comment>',
-                $file->getRelativePathname()
+                $currentFile->getRelativePathname()
             ));
         }
 
